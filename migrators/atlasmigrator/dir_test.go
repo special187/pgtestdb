@@ -8,8 +8,8 @@ import (
 	"github.com/peterldowns/testy/assert"
 	"github.com/peterldowns/testy/check"
 
-	"github.com/peterldowns/pgtestdb"
-	"github.com/peterldowns/pgtestdb/migrators/atlasmigrator"
+	"github.com/special187/pgtestdb"
+	"github.com/special187/pgtestdb/migrators/atlasmigrator"
 )
 
 func TestDirMigrator(t *testing.T) {

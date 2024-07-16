@@ -9,8 +9,8 @@ import (
 	"github.com/peterldowns/testy/check"
 	_ "github.com/uptrace/bun/driver/pgdriver"
 
-	"github.com/peterldowns/pgtestdb"
-	"github.com/peterldowns/pgtestdb/migrators/bunmigrator"
+	"github.com/special187/pgtestdb"
+	"github.com/special187/pgtestdb/migrators/bunmigrator"
 )
 
 //go:embed migrations/*.sql

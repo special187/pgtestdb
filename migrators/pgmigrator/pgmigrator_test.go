@@ -10,9 +10,9 @@ import (
 	"github.com/peterldowns/testy/assert"
 	"github.com/peterldowns/testy/check"
 
-	"github.com/peterldowns/pgtestdb"
-	"github.com/peterldowns/pgtestdb/migrators/pgmigrator"
-	"github.com/peterldowns/pgtestdb/migrators/pgmigrator/migrations"
+	"github.com/special187/pgtestdb"
+	"github.com/special187/pgtestdb/migrators/pgmigrator"
+	"github.com/special187/pgtestdb/migrators/pgmigrator/migrations"
 )
 
 func TestPGMigratorFromDisk(t *testing.T) {

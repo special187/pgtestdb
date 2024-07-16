@@ -9,8 +9,8 @@ import (
 	"github.com/peterldowns/testy/assert"
 	"github.com/peterldowns/testy/check"
 
-	"github.com/peterldowns/pgtestdb"
-	"github.com/peterldowns/pgtestdb/migrators/golangmigrator"
+	"github.com/special187/pgtestdb"
+	"github.com/special187/pgtestdb/migrators/golangmigrator"
 )
 
 //go:embed migrations/*.sql

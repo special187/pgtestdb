@@ -1,11 +1,11 @@
-module github.com/peterldowns/pgtestdb/migrators/bunmigrator
+module github.com/special187/pgtestdb/migrators/bunmigrator
 
 go 1.18
 
-replace github.com/peterldowns/pgtestdb => ../../
+replace github.com/special187/pgtestdb => ../../
 
 require (
-	github.com/peterldowns/pgtestdb v0.0.14
+	github.com/special187/pgtestdb v0.0.14
 	github.com/peterldowns/testy v0.0.1
 	github.com/uptrace/bun v1.2.1
 	github.com/uptrace/bun/dialect/pgdialect v1.2.1

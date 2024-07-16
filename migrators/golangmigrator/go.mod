@@ -1,13 +1,13 @@
-module github.com/peterldowns/pgtestdb/migrators/golangmigrator
+module github.com/special187/pgtestdb/migrators/golangmigrator
 
 go 1.18
 
-replace github.com/peterldowns/pgtestdb => ../../
+replace github.com/special187/pgtestdb => ../../
 
 require (
 	github.com/golang-migrate/migrate/v4 v4.16.0
 	github.com/jackc/pgx/v5 v5.5.1
-	github.com/peterldowns/pgtestdb v0.0.14
+	github.com/special187/pgtestdb v0.0.14
 	github.com/peterldowns/testy v0.0.1
 )
 

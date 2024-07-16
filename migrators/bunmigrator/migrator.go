@@ -10,8 +10,8 @@ import (
 	"github.com/uptrace/bun/dialect/pgdialect"
 	"github.com/uptrace/bun/migrate"
 
-	"github.com/peterldowns/pgtestdb"
-	"github.com/peterldowns/pgtestdb/migrators/common"
+	"github.com/special187/pgtestdb"
+	"github.com/special187/pgtestdb/migrators/common"
 )
 
 var _ pgtestdb.Migrator = (*BunMigrator)(nil)

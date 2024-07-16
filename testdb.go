@@ -8,9 +8,9 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/peterldowns/pgtestdb/internal/once"
-	"github.com/peterldowns/pgtestdb/internal/sessionlock"
-	"github.com/peterldowns/pgtestdb/migrators/common"
+	"github.com/special187/pgtestdb/internal/once"
+	"github.com/special187/pgtestdb/internal/sessionlock"
+	"github.com/special187/pgtestdb/migrators/common"
 )
 
 const (
@@ -239,7 +239,16 @@ func create(t TB, conf Config, migrator Migrator) (*Config, *sql.DB) {
 			t.Fatalf("could not connect to database: '%s': %s", conf.Database, err)
 			return
 		}
+		terminateQuery := fmt.Sprintf("SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE pid <> pg_backend_pid() AND datname = '%s'", instance.Database)
+		if _, err := baseDB.ExecContext(ctx, terminateQuery); err != nil {
+			t.Fatalf("could not terminate process of test database '%s': %s", instance.Database, err)
+			return // unreachable
+		}
 		query := fmt.Sprintf(`DROP DATABASE IF EXISTS "%s"`, instance.Database)
+		if _, err := baseDB.ExecContext(ctx, query); err != nil {
+			t.Fatalf("could not drop test database '%s': %s", instance.Database, err)
+			return // unreachable
+		}
 		if _, err := baseDB.ExecContext(ctx, query); err != nil {
 			t.Fatalf("could not drop test database '%s': %s", instance.Database, err)
 			return // unreachable
@@ -480,7 +489,7 @@ func randomID() string {
 // out testdb and aren't sure which migrator to use yet.
 //
 // For more documentation on migrators, see
-// https://github.com/peterldowns/pgtestdb#testdbmigrator
+// https://github.com/special187/pgtestdb#testdbmigrator
 type NoopMigrator struct{}
 
 func (NoopMigrator) Hash() (string, error) {

@@ -1,12 +1,12 @@
-module github.com/peterldowns/pgtestdb/migrators/atlasmigrator
+module github.com/special187/pgtestdb/migrators/atlasmigrator
 
 go 1.18
 
-replace github.com/peterldowns/pgtestdb => ../../
+replace github.com/special187/pgtestdb => ../../
 
 require (
 	github.com/jackc/pgx/v5 v5.5.1
-	github.com/peterldowns/pgtestdb v0.0.14
+	github.com/special187/pgtestdb v0.0.14
 	github.com/peterldowns/testy v0.0.1
 )
 

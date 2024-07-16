@@ -1,7 +1,7 @@
 # bunmigrator
 
 ```
-go get github.com/peterldowns/pgtestdb/migrators/bunmigrator@latest
+go get github.com/special187/pgtestdb/migrators/bunmigrator@latest
 ```
 
 bunmigrator provides a migrator that can be used with projects that make use of [uptrace/bun](https://github.com/uptrace/bun) for migrations.

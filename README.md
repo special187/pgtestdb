@@ -13,8 +13,8 @@ popular migration frameworks, works with everything.
 
 # Documentation
 
-- [The Github README, https://github.com/peterldowns/pgtestdb](https://github.com/peterldowns/pgtestdb)
-- [The go.dev docs, pkg.go.dev/github.com/peterldowns/pgtestdb](https://pkg.go.dev/github.com/peterldowns/pgtestdb)
+- [The Github README, https://github.com/special187/pgtestdb](https://github.com/special187/pgtestdb)
+- [The go.dev docs, pkg.go.dev/github.com/special187/pgtestdb](https://pkg.go.dev/github.com/special187/pgtestdb)
 
 The Github README is the primary source for documentation. The code itself is
 supposed to be well-organized, and each function has a meaningful docstring, so
@@ -61,7 +61,7 @@ your own adapter.
 ## Install
 
 ```shell
-go get github.com/peterldowns/pgtestdb@latest
+go get github.com/special187/pgtestdb@latest
 ```
 
 ## Quickstart
@@ -492,7 +492,7 @@ nothing at all.
 // out pgtestdb and aren't sure which migrator to use yet.
 //
 // For more documentation on migrators, see
-// https://github.com/peterldowns/pgtestdb#pgtestdbmigrator
+// https://github.com/special187/pgtestdb#pgtestdbmigrator
 type NoopMigrator struct{}
 ```
 
