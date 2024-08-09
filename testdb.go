@@ -55,7 +55,8 @@ type Config struct {
 	// and each test database. If not provided, defaults to [DefaultRole].  The
 	// capabilities of this role should match the capabilities of the role that
 	// your application uses to connect to its database and run migrations.
-	TestRole *Role
+	TestRole      *Role
+	AlwaysCleanUp bool // whether to drop the database on test failure
 }
 
 // Role contains the details of a postgres role (user) that will be used
@@ -228,8 +229,8 @@ func create(t TB, conf Config, migrator Migrator) (*Config, *sql.DB) {
 			t.Fatalf("could not close test database: '%s': %s", instance.Database, err)
 			return // unreachable
 		}
-		// If the test failed, leave the instance around for further investigation
-		if t.Failed() {
+		// If the test failed and the `AlwaysCleanUp` flag is false, leave the instance around for further investigation
+		if t.Failed() && !conf.AlwaysCleanUp {
 			return
 		}
 
